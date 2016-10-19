@@ -1,0 +1,126 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:orientation="vertical"
+   android:layout_marginLeft="10dp" >
+
+    <TextView
+        android:id="@+id/tVbiaoti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="#ff0000"
+        android:textSize="24sp"
+        android:text="@string/tVbiaoti" />
+    
+    <TableRow>
+        
+    <TextView
+        android:id="@+id/tVname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/tVname" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content">
+    </EditText>
+    
+    <TextView 
+        android:id="@+id/tVbnwk" 
+        android:layout_width="wrap_content"
+         android:layout_height="wrap_content" 
+         android:textColor="#ff0000" 
+         android:textSize="16sp"
+          android:text="@string/tVbnwk" />
+    </TableRow>
+    <TableRow>
+         <TextView
+        android:id="@+id/tVpsd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/tVpsd" />
+
+    <EditText
+        android:id="@+id/psd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword" />
+    <TextView
+        android:id="@+id/tVtishi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="#ff0000" 
+        android:text="@string/tVtishi" />
+     </TableRow>
+     
+     <TableRow>
+         <TextView
+        android:id="@+id/tVpsd2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/tVpsd2" />
+
+    <EditText
+        android:id="@+id/psd2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword" />
+     </TableRow>
+     <TableRow>
+         <TextView
+        android:id="@+id/tVgender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/tVgender" />
+         <RadioGroup 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal">
+         <RadioButton 
+             android:id="@+id/male"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/male" 
+             android:textSize="20sp"/>
+         <RadioButton 
+             android:id="@+id/female"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/female" 
+             android:textSize="20sp"/>
+         </RadioGroup>
+             </TableRow>
+             <TableRow>
+                 <Button
+        android:id="@+id/Btncity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/Btncity"/>
+
+    <EditText
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:inputType="text"/>
+     </TableRow>
+         
+
+   
+    <Button
+        android:id="@+id/Btnregister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:text="@string/Btnregister"
+        android:textSize="20sp"/>
+
+   
+</TableLayout>
