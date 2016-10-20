@@ -6,7 +6,7 @@ import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.view.Menu;
+
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -18,16 +18,17 @@ public class MainActivity extends Activity {
 	private Button Btnregister,Btncity;
 	private TextView tVname,tVpsd,tVpsd2,tVgender;
 	private RadioButton male;
-	private EditText city;
+	private EditText city,psd,psd2;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		Btncity=(Button)findViewById(R.id.Btncity);
 		Btnregister=(Button)findViewById(R.id.Btnregister);
-		tVname=(TextView)findViewById(R.id.tVname);
-		tVpsd=(TextView)findViewById(R.id.tVpsd);
-		tVpsd2=(TextView)findViewById(R.id.tVpsd2);
+		tVname=(TextView)findViewById(R.id.name);
+		//这里要注意
+		tVpsd=(EditText)findViewById(R.id.psd);
+		tVpsd2=(EditText)findViewById(R.id.psd2);
 		tVgender=(TextView)findViewById(R.id.tVgender);
 		male=(RadioButton)findViewById(R.id.male);
 		city=(EditText)findViewById(R.id.city);
@@ -58,10 +59,10 @@ public class MainActivity extends Activity {
 					//注册信息符合要求，将数据放入Intent，进行传递
 				}else{
 					Intent intent=new Intent(MainActivity.this,ResultActivity.class);
-					intent.putExtra("tVname", tVname.getText().toString());
+					intent.putExtra("name", tVname.getText().toString());
 					intent.putExtra("psd",tVpsd.getText().toString());
 					String gender=male.isChecked()?"男":"女";
-					intent.putExtra("gender",tVgender.getText().toString());
+					intent.putExtra("gender",gender);
 					intent.putExtra("city",Btncity.getText().toString());
 					//启动一个新的Activity
 					startActivity(intent);
@@ -92,9 +93,12 @@ public class MainActivity extends Activity {
 		   
 			//调用验证用户信息方法
 			public String checkInfo(){
+				System.out. println("name");
 				if(tVname.getText().toString()==null||tVname.getText().toString().equals("")){
+					System.out. println("8888888");
 					return"用户名不能为空";
 				}//对用户名进行验证
+				
 				if(tVpsd.getText().toString().trim().length()<6||tVpsd.getText().toString().trim().length()>15){
 					return"密码位数应该在6~15之间";
 				}
